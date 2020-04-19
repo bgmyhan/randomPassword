@@ -2,11 +2,11 @@
 
 // prompts for PassswordLength | UpperCaseLetters |LowerCaseLetters| Symbols//
 
-var requestedPasswordLength = generate.addEventListener("click", function(){
+var requestPasswordLength = generate.addEventListener("click", function(){
   prompt("Please decide how long you want your password to be using only numbers.")
 }
 )
-var requestedUpperLetters = generate.addEventListener("click", function(){
+var requestUpperLetters = generate.addEventListener("click", function(){
   confirm("Do You Want To Include Upper Case Letters?")
 }
 )
@@ -21,21 +21,20 @@ var requestNumbers = generate.addEventListener("click", function(){confirm("Do Y
 }
 )
 
-
 const randomFunc = {
-  lower: requestLowerLetters,
   upper: requestUpperLetters,
-  number: requestNumbers,
+  lower: requestLowerLetters,
   symbol: requestSymbols,
+  number: requestNumbers
 
- };
+ }
 
-generate.addEventListener("click", () => {
-  var userRequestedlength = requestPasswordLength.value;
-  var userRequestedLowerLetters = requestLowerLetters.checked;
-  var userRequestedUpperLetters = requestUpperLetters.checked;
-  var userRequestedNumbers = requestNumbers.checked;
-  var userRequestedSymbols = requestSymbols.checked
+// generate.addEventListener("click", () => {
+//   var userRequestedlength = requestPasswordLength;
+//   var userRequestedLowerLetters = requestLowerLetters.true;
+//   var userRequestedUpperLetters = requestUpperLetters.true;
+//   var userRequestedNumbers = requestNumbers.true;
+//   var userRequestedSymbols = requestSymbols.true
  
 
   // Generating Full Password //
@@ -81,8 +80,3 @@ var randomSymbols = possibleSymbols[Math.floor(Math.random()*10)];
 var randomUpperLetters = possibleUpperLetters[Math.floor(Math.random()*10)];
 var randomLowerLetters = possibleLowerLetters[Math.floor(Math.random()*10)];
 
-// }
-// console.log("Numbers", randomNumbers);
-// console.log("symbols", randomSymbols);
-// console.log(randomUpperLetters);
-// console.log(randomLowerLetters);
