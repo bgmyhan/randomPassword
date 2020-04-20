@@ -4,75 +4,49 @@
 
 var requestPasswordLength = generate.addEventListener(
   "click", function(){
-  prompt(
-    "Please decide how long you want your password to be using only numbers."
-    )
-  }
-)
-var requestUpperLetters = generate.addEventListener(
-  "click", function(){
-    confirm(
-    "Do You Want To Include Upper Case Letters?"
-    )
-  }
-)
-var requestLowerLetters = generate.addEventListener(
-  "click", function(){
-    confirm(
-    "Do You Want To Include Lower Case Letters?"
-    )
-  }
-)
-var requestSymbols = generate.addEventListener(
-  "click", function(){
-    confirm(
-    "Do You Want To Include Symbols?"
-    )
-  }
-) 
-var requestNumbers = generate.addEventListener(
-  "click", function(){
-    confirm(
-    "Do You Want To Include Numbers?"
-    )
-  }
-)
-var finalPassword = document.getElementById("password");
+  prompt("Please decide how long you want your password to be using only numbers.")
+  })
+var requestUpperLetters = generate.addEventListener("click", function(){
+  confirm("Do You Want To Include Upper Case Letters?")
+  })
+var requestLowerLetters = generate.addEventListener("click", function(){
+    confirm("Do You Want To Include Lower Case Letters?")
+  })
+var requestSymbols = generate.addEventListener("click", function(){
+    confirm("Do You Want To Include Symbols?")
+  }) 
+var requestNumbers = generate.addEventListener("click", function(){
+  confirm("Do You Want To Include Numbers?")
+  })
+var finalGenPassword = document.getElementById("password");
 
-const randomFunc = {
-  upper: requestUpperLetters,
-  lower: requestLowerLetters,
-  symbol: requestSymbols,
-  number: requestNumbers,
- }
- 
+
+
 // Generate Password Function
-    var generatedPassword = "";
-    password.innerText = (generatedPassword +
-    [requestPasswordLength,
-    requestLowerLetters,
-    requestUpperLetters,
-    requestNumbers,
-    requestSymbols]
-  );
+   
+password.innerText = finalPassword(requestPasswordLength, requestLowerLetters, requestUpperLetters, requestNumbers, requestSymbols)
+
+;
 
 
-function finalPassword(lower, upper, number, symbol, length) {
+function finalPassword(requestLowerLetters, requestUpperLetters, requestNumbers, requestSymbols, requestPasswordLength) {
+  var finalGenPassword = "";
+  const typesCount = requestLowerLetters + requestUpperLetters + requestNumbers + requestSymbols + requestPasswordLength;
+  const fullArray = [{requestLowerLetters}, {requestUpperLetters}, {requestNumbers}, {requestSymbols}].filter (item => Object.values(item)[0]);
 
-  
-  const typescount = lower + upper + number + symbol;
-
-  const fullArray = [{lower}, {upper}, {number}, {symbol}].filter (item => Objectvalues(item)[0]);
-
- for( i=0; i < length; i += typescount){
+  // If user requested modified password//
+  if(typesCount === 0) {
+    return '';
+  }
+ for( i=0; i < length; i += typesCount){
    fullArray.forEach(type => {
      const funcName = Object.keys(type)[0];
-
-     finalPassword += randomFunc[funcName]();
+     finalGenPassword += randomFunc[funcName]();
    });
 
  }
-  var finalPassword = finalPassword.slice(0, length);
+  var finalPassword = finalGenPassword.slice(0, length);
+  return finalPassword
 }
 
 
