@@ -18,38 +18,40 @@ var requestSymbols = generate.addEventListener("click", function(){
 var requestNumbers = generate.addEventListener("click", function(){
   confirm("Do You Want To Include Numbers?")
   })
-var finalGenPassword = document.getElementById("password");
+  var generatePassword = document.getElementById("password");
 
+
+
+  // Event Listener for Password//
+  generatePassword.addEventListener('click',()=>{
+
+    var userConflength = +requestPasswordLength.value;
+    var userConfUpper = requestUpperLetters.true;
+    var userConfLower = requestLowerLetters.true;
+    var userConfSymbols = requestSymbols.true;
+    var userConfNumbers = requestNumbers.true;
+    
+    generatePassword.innertext = finalPassword (userConflength, userConfUpper, userConfLower, userConfSymbols, userConfNumbers);
+
+  });
 
 
 // Generate Password Function
-   
-password.innerText = finalPassword(requestPasswordLength, requestLowerLetters, requestUpperLetters, requestNumbers, requestSymbols)
 
-;
+  function finalPassword(userConflength, userConfUpper, userConfLower, userConfSymbols, userConfNumbers){
+  
+  generatedPassword = "";
 
+  userOptions = [{userConflength}, {userConfUpper}, {userConfLower}, {userConfSymbols}, {userConfNumbers}].filter
 
-function finalPassword(requestLowerLetters, requestUpperLetters, requestNumbers, requestSymbols, requestPasswordLength) {
-  var finalGenPassword = "";
-  const typesCount = requestLowerLetters + requestUpperLetters + requestNumbers + requestSymbols + requestPasswordLength;
-  const fullArray = [{requestLowerLetters}, {requestUpperLetters}, {requestNumbers}, {requestSymbols}].filter (item => Object.values(item)[0]);
-
-  // If user requested modified password//
-  if(typesCount === 0) {
-    return '';
-  }
- for( i=0; i < length; i += typesCount){
-   fullArray.forEach(type => {
-     const funcName = Object.keys(type)[0];
-     finalGenPassword += randomFunc[funcName]();
-   });
-
- }
-  var finalPassword = finalGenPassword.slice(0, length);
-  return finalPassword
+  for ( i = 0; i < userConfLength; i+= userOptions){
+  userOptions.forEach = object.keys(type)(0);
+  var generatedPassword = generatedPassword + finalPassword[userOptions]();
+  var finalGenPassword = generatedPassword.slice(0, length);
 }
+return finalGenPassword;
 
-
+};
 var possibleUpperLetters =
 "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var possibleLowerLetters =
@@ -64,4 +66,3 @@ var randomSymbols = possibleSymbols[Math.floor(Math.random()*10)];
 var randomUpperLetters = possibleUpperLetters[Math.floor(Math.random()*10)];
 var randomLowerLetters = possibleLowerLetters[Math.floor(Math.random()*10)];
 
-console.log(finalPassword)
