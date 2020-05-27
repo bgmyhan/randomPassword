@@ -20,6 +20,17 @@
           <textarea id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
         </div>
         <!-- Javascript runs in #generate -->
+        <input type="text" id="reqPassLength" valeu="reqPassLength" placeholder="Please Enter a Number">
+        <label>How many characters would you like your password to be?</label>
+        <br>
+        <input type="checkbox" id="reqNum" value="reqNum"> Would you like your password to include Numbers?"
+        <br>
+        <input type="checkbox" id="reqSym" value="reqSym"> Would you like your password to include Symbols?
+        <br>
+       <input type="checkbox" id="reqLLetter" value="reqLLetter"> Would you like your password to include lower case Letters?
+       <br>
+       <input type="checkbox" id="reqULetter" value="reqULetter"> Would you like your password to include upper case Letters?
+       <br>
         <div class="card">
           <button id="generateBtn" class="btn" onclick="Function()">Generate Password</button>
         </div>
