@@ -48,7 +48,7 @@ if (reqULetter){
   pass += getRandomULetters()
   }
 }
-// creating password from permissions arranged symbiotically structured aka p.a.s.s. //
+// creating password from user selected permission
 for (i=0; i<length; i++){
   password += pass.charAt(Math.floor(Math.random() * pass.length ))
   }
@@ -56,5 +56,3 @@ for (i=0; i<length; i++){
 document.getElementById("password").innerText = password;
 // Ending click function//
 });
-// Please enjoy your password built by Brandon Myhan//
-// And be sure to look out, Coming this Winter: version 2 with increased security features and new user interface//
