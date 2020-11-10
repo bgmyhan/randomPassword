@@ -9,12 +9,6 @@ This application can be installed onto any computer and used in their default br
 ![Random Password Gif](https://media.giphy.com/media/lUFXCHf9IVX1dJ3Y1B/giphy.gif)
 
 
-## Credits
-
-## License
-
-## Badges
-
 ## Contributing
 
 
