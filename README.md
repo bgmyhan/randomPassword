@@ -6,7 +6,7 @@ This project helped demonstrate my knowledge of for loops and utilization of the
 ## Usage 
 This application can be installed onto any computer and used in their default browser. It works best in the latest version of Chrome or Firefox. The selected options offer passwords with; uppercase letters, lowercase letters, symbols, and or numbers. 
 
-![Random Password Gif](https://media.giphy.com/media/lUFXCHf9IVX1dJ3Y1B/giphy.gif 112)
+![Random Password Gif](https://media.giphy.com/media/lUFXCHf9IVX1dJ3Y1B/giphy.gif)
 
 
 ## Credits
